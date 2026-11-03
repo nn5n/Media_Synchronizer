@@ -1,0 +1,74 @@
+:root {
+  color-scheme: dark;
+  --text: #f5f5f5;
+  --dim: #a8adb5;
+  --card: #1a1d22;
+  --line: #2c3038;
+  --accent: #f5c518;
+  --found: #2fbf71;
+  --not-found: #8a9099;
+  --down: #ff9f43;
+  --unsure: #5aa9ff;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  background: #000;
+  color: var(--text);
+  font: 19px/1.35 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+main { max-width: 640px; margin: 0 auto; }
+[hidden] { display: none !important; }
+h1 { font-size: 30px; margin: 8px 0 12px; }
+label { display: block; margin: 16px 0 6px; color: var(--dim); }
+input {
+  width: 100%;
+  min-height: 56px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--text);
+  font: inherit;
+}
+input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+button {
+  min-height: 52px;
+  padding: 10px 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+button.primary { background: var(--accent); border-color: var(--accent); color: #000; font-weight: 700; }
+button.quiet { background: none; border: none; color: var(--dim); display: block; margin: 20px auto 0; }
+#setup button { width: 100%; margin-top: 18px; }
+.add-row { display: flex; gap: 10px; }
+.add-row input { flex: 1; min-width: 0; }
+.add-row button { flex: none; min-width: 84px; }
+.message { margin: 12px 2px; color: var(--dim); min-height: 1.35em; }
+.message.problem { color: var(--down); }
+#items { list-style: none; margin: 8px 0 0; padding: 0; }
+.item { margin-bottom: 12px; padding: 14px; border-radius: 14px; background: var(--card); }
+.item-name { font-size: 22px; font-weight: 700; overflow-wrap: anywhere; }
+.item-official { color: var(--dim); margin-top: 2px; overflow-wrap: anywhere; }
+.item-status { margin-top: 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; padding: 0; list-style: none; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 10px; border: 2px solid; font-size: 17px; }
+.chip-mark { font-weight: 800; }
+.chip-found { border-color: var(--found); color: var(--found); background: rgba(47, 191, 113, .12); }
+.chip-not_found { border-color: var(--line); color: var(--not-found); }
+.chip-down { border-color: var(--down); border-style: dashed; color: var(--down); }
+.chip-unsure { border-color: var(--unsure); color: var(--unsure); }
+.chip-hidden { border-color: var(--line); border-style: dotted; color: var(--not-found); }
+.chip-note { display: block; font-size: 14px; opacity: .9; }
+.choice-title { margin: 14px 0 6px; font-weight: 700; }
+.choice { display: block; width: 100%; margin-top: 8px; text-align: left; overflow-wrap: anywhere; }
+.choice small { display: block; color: var(--dim); font-size: 15px; }
+details { margin-top: 12px; color: var(--dim); }
+summary { min-height: 40px; padding-top: 8px; cursor: pointer; }
+.remove { margin-top: 14px; width: 100%; color: var(--dim); background: none; font-size: 16px; }

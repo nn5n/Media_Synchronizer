@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; manifest-src 'self'; worker-src 'self'; connect-src 'self' https://api.github.com; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Watch list">
+<title>Watch list</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+<script src="logic.js"></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<main id="setup" hidden>
+  <h1>Watch list</h1>
+  <p>Paste the access key once. It stays on this phone and is only sent to GitHub.</p>
+  <label for="setup-token">Access key</label>
+  <input id="setup-token" type="password" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">
+  <label for="setup-repo">List</label>
+  <input id="setup-repo" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">
+  <button id="setup-save" class="primary" type="button">Connect</button>
+  <p id="setup-message" class="message" role="status"></p>
+  <button id="setup-cancel" type="button" hidden>Cancel</button>
+</main>
+
+<main id="list-screen" hidden>
+  <div class="add-row">
+    <input id="name" type="text" placeholder="Series or movie name" aria-label="Series or movie name" autocomplete="off" autocorrect="off" enterkeyhint="done">
+    <button id="add" class="primary" type="button">Add</button>
+  </div>
+  <p id="connection" class="message" role="status"></p>
+  <ul id="items"></ul>
+  <p id="empty" class="message" hidden>Nothing here yet. Add a name you saw, and the projector will find it.</p>
+  <button id="settings" class="quiet" type="button">Settings</button>
+</main>
+</body>
+</html>
